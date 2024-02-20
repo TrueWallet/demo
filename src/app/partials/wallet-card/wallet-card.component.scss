@@ -1,0 +1,22 @@
+:host {
+  background: var(--app-brand-color) url('/assets/images/card-tpl.png') no-repeat center;
+  background-size: cover;
+  height: 176px;
+  color: #fff;
+  border-radius: 16px;
+  padding: var(--app-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 60px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -1,0 +1,19 @@
+<div class="asset">
+  <app-operation-header>{{token?.symbol}}</app-operation-header>
+
+  <div class="asset-details">
+    <img [src]="token?.address | indenticon: 100" alt="">
+    <h1>{{(balance$ | async) | number: '.0-6'}} {{token?.symbol}}</h1>
+  </div>
+</div>
+
+<div class="asset-container" *ngIf="token">
+  <app-asset-operations
+    class="asset-operations"
+    [asset]="token"
+    [loading]="!!(loading$$ | async)"
+    view="centered"
+    (operation)="onOperation($event)"
+    (processed)="refreshData()"
+  ></app-asset-operations>
+</div>

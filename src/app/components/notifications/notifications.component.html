@@ -1,0 +1,11 @@
+<div class="notifications-container">
+  <ng-container *ngIf="notification$ | async as notification">
+
+    <app-notification
+      class="notification"
+      [type]="notification.type"
+      [title]="notification.title"
+      [message]="notification.message"
+    ></app-notification>
+  </ng-container>
+</div>

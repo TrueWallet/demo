@@ -1,0 +1,27 @@
+<div class="operations" [ngClass]="[view]">
+  <div class="operation" *ngFor="let item of operations">
+
+    <ng-container [ngSwitch]="item.operation">
+      <a class="operation-button" [class.disabled]="!item.enabled" *ngSwitchCase="AssetOperation.send" [routerLink]="item.url"><img src="/assets/icons/send.svg" alt=""></a>
+
+      <ng-container *ngSwitchCase="AssetOperation.receive">
+        <a class="operation-button" [class.disabled]="!item.enabled" [routerLink]="item.url"><img src="/assets/icons/receive.svg" alt=""></a>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="AssetOperation.deposit">
+        <a class="operation-button" [class.disabled]="!item.enabled" *ngIf="item.url" [href]="item.url" target="_blank" rel="noopener noreferrer"><img src="/assets/icons/deposit.svg" alt=""></a>
+
+        <button [disabled]="loading" *ngIf="!item.url" (click)="emitEvent(item.operation)" class="operation-button" [class.disabled]="!item.enabled">
+          <img *ngIf="!loading" src="/assets/icons/deposit.svg" alt="">
+          <mat-spinner diameter="25" *ngIf="loading"></mat-spinner>
+        </button>
+      </ng-container>
+
+      <span class="operation-button" [class.disabled]="!item.enabled" *ngSwitchCase="AssetOperation.buy">
+        <img *ngSwitchCase="AssetOperation.buy" src="/assets/icons/buy.svg" alt="">
+      </span>
+    </ng-container>
+
+    {{item.operation}}
+  </div>
+</div>

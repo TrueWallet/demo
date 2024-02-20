@@ -1,0 +1,34 @@
+.app-message {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  &.warning {
+    background-color: #FFEBEE;
+  }
+
+  &.success {
+    background-color: #E7F4E8;
+  }
+
+  &-content {
+    max-width: 300px;
+
+    h6 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 21px;
+      color: #000000DE;
+    }
+
+    p {
+      color: rgba(0, 0, 0, 0.60);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}

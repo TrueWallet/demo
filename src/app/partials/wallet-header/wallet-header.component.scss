@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 0 var(--app-padding);
+}

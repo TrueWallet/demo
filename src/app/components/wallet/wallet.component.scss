@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.wallet-body {
+  padding: var(--app-padding);
+}
+
+.wallet-cards {
+  margin-bottom: 24px;
+}
+
+.wallet-operations {
+  margin-bottom: 24px;
+}

@@ -1,0 +1,4 @@
+<ng-container *ngIf="snippet$ | async as code">
+  <button (click)="clearConsole()">x</button>
+  <pre><code [highlight]="code" [languages]="['typescript']" [lineNumbers]="true"></code></pre>
+</ng-container>

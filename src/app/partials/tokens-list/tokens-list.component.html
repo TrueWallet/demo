@@ -1,0 +1,22 @@
+<mat-list>
+  <ng-container *ngFor="let item of tokens$ | async; let isLast = last">
+    <mat-list-item [routerLink]="item.symbol">
+      <div class="token-list-item">
+        <picture>
+          <img [src]="item.address | indenticon" alt="">
+        </picture>
+
+        <h4>
+          {{item.symbol}}
+          <small>$1.00</small>
+        </h4>
+
+        <div class="balances" *ngIf="item.balance | async as balance">
+          {{balance | number: '.0-2'}}
+          <small>${{balance | number: '.2'}}</small>
+        </div>
+      </div>
+    </mat-list-item>
+    <mat-divider *ngIf="!isLast"></mat-divider>
+  </ng-container>
+</mat-list>
