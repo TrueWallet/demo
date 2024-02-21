@@ -70,6 +70,8 @@ $sdk-demo-theme: mat.define-light-theme((
   --app-background: #181A20;
   --app-brand-color: #1BAC4B;
 
+  --body-background: #282c34;
+
   --app-padding: 16px;
 
   --text-color-primary: #FFFFFF;
@@ -141,12 +143,13 @@ $sdk-demo-theme: mat.define-light-theme((
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Urbanist, sans-serif;
-  color: var(--text-color-primary);
 }
 
 html, body {
   height: 100%;
+  font-family: Urbanist, sans-serif;
+  color: var(--text-color-primary);
+  background-color: var(--body-background);
 }
 
 .info-trigger {
@@ -215,4 +218,42 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.markdown-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color-primary);
+  }
+
+  pre {
+    border-radius: 4px;
+  }
+
+  a {
+    color: var(--app-brand-color);
+  }
+
+  .markdown-clipboard-button {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 4px 0;
+    width: 50px;
+    transition: all 250ms ease-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &.copied {
+      background-color: var(--app-brand-color);
+    }
+  }
 }

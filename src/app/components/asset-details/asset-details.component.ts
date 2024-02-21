@@ -51,7 +51,6 @@ export class AssetDetailsComponent {
   }
 
   async onOperation(operation: AssetOperation) {
-    console.log(operation);
     if (operation === AssetOperation.deposit) {
       await this.deposit();
     }

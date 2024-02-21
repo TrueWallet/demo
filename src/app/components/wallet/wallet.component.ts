@@ -3,8 +3,6 @@ import { WalletService } from "../../services/wallet/wallet.service";
 import { AsyncPipe, DecimalPipe } from "@angular/common";
 import { MatIcon } from "@angular/material/icon";
 import { InfoTriggerComponent } from "../../partials/info-trigger/info-trigger.component";
-import { WalletBalanceSnippet } from "../../constants/snippets";
-import { WalletHeaderComponent } from "../../partials/wallet-header/wallet-header.component";
 import { WalletCardComponent } from "../../partials/wallet-card/wallet-card.component";
 import { AssetOperationsComponent } from "../../partials/asset-operations/asset-operations.component";
 import { MatTab, MatTabGroup, MatTabLabel } from "@angular/material/tabs";
@@ -38,11 +36,7 @@ export class WalletComponent {
   readonly address: string;
   balance$: Promise<string>;
 
-
-  constructor(
-    private wallet: WalletService,
-    protected viewContainerRef: ViewContainerRef,
-  ) {
+  constructor(private wallet: WalletService) {
     this.address = this.wallet.address;
     this.balance$ = this.wallet.getBalance();
   }

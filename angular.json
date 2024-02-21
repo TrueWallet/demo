@@ -31,9 +31,15 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/highlight.js/styles/atom-one-dark.css"
+              "node_modules/prism-themes/themes/prism-vsc-dark-plus.css",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/clipboard/dist/clipboard.min.js",
+              "node_modules/prismjs/components/prism-typescript.min.js",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js"
+            ]
           },
           "configurations": {
             "production": {

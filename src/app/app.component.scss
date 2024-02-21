@@ -1,3 +1,26 @@
+main {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.divider {
+  width: 1px;
+  background: #344535;
+}
+
 .phone-wrapper {
   padding: 48px 16px;
   border-radius: 32px;

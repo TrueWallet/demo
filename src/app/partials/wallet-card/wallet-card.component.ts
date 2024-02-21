@@ -1,5 +1,4 @@
 import { Component, HostBinding, HostListener, Input } from '@angular/core';
-import { WalletBalanceSnippet } from "../../constants/snippets";
 import { AsyncPipe, DecimalPipe } from "@angular/common";
 import { InfoTriggerComponent } from "../info-trigger/info-trigger.component";
 import { WalletAddressPipe } from "../../pipes/wallet-address/wallet-address.pipe";
@@ -35,7 +34,4 @@ export class WalletCardComponent {
     this.animationState = 'scaled';
     setTimeout(() => this.animationState = 'normal', 200);
   }
-
-  protected readonly balanceSnippet = WalletBalanceSnippet;
-
 }

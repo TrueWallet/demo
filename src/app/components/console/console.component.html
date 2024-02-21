@@ -1,4 +1,14 @@
 <ng-container *ngIf="snippet$ | async as code">
-  <button (click)="clearConsole()">x</button>
-  <pre><code [highlight]="code" [languages]="['typescript']" [lineNumbers]="true"></code></pre>
+  <div class="actions">
+<!--    <button (click)="clearConsole()">x</button>-->
+  </div>
+
+  <markdown
+    class="markdown-content"
+    clipboard
+    lineNumbers
+    lineHighlight
+    [src]="code"
+  ></markdown>
+<!--  <pre><code [highlight]="code" [languages]="['typescript']" [lineNumbers]="true"></code></pre>-->
 </ng-container>

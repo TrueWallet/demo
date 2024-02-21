@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ConsoleService } from "../../services/console/console.service";
-import { Observable } from "rxjs";
+import { Observable, tap } from "rxjs";
 import { AsyncPipe, NgIf } from "@angular/common";
-import { HIGHLIGHT_OPTIONS, HighlightModule } from "ngx-highlightjs";
+import { MarkdownModule } from "ngx-markdown";
 
 @Component({
   selector: 'app-console',
@@ -10,7 +10,7 @@ import { HIGHLIGHT_OPTIONS, HighlightModule } from "ngx-highlightjs";
   imports: [
     NgIf,
     AsyncPipe,
-    HighlightModule,
+    MarkdownModule
   ],
   providers: [],
   templateUrl: './console.component.html',
@@ -20,8 +20,14 @@ import { HIGHLIGHT_OPTIONS, HighlightModule } from "ngx-highlightjs";
 export class ConsoleComponent {
   snippet$: Observable<string | null>;
 
-  constructor(private console: ConsoleService) {
-    this.snippet$ = this.console.console;
+  constructor(
+    private console: ConsoleService,
+    private cdr: ChangeDetectorRef,
+  ) {
+    this.snippet$ = this.console.console.pipe(
+      // FIXME: This is a workaround for the ngx-markdown copy button rendering issue
+      tap(() => setTimeout(() => this.cdr.markForCheck(), 100))
+    );
   }
 
   clearConsole(): void {
