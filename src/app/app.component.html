@@ -1,17 +1,14 @@
 <main class="main">
   <div class="content">
-    <div class="left-side">
-      <div class="phone-wrapper">
-        <div class="container">
-          <app-notifications class="app-notifications"></app-notifications>
-          <app-wallet-header></app-wallet-header>
-          <router-outlet />
-        </div>
+    <div class="phone-wrapper">
+      <div class="container">
+        <app-notifications class="app-notifications"></app-notifications>
+        <app-wallet-header></app-wallet-header>
+        <router-outlet />
       </div>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <app-console />
-    </div>
+
+    <app-console />
   </div>
 </main>
