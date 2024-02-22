@@ -1,3 +1,7 @@
+## Overview
+
+This is the demo project of TrueWallet Smart Account. The same integration could be implemented in any mobile or web app for your customers.
+
 ## Wallet Initialization
 
 To init your wallet with the TrueWallet SDK, you need to provide a signer and a bundler URL, which could be taken from the <a href="https://dashboard.true-wallet.io/" target="_blank">dashboard</a>.
@@ -28,3 +32,5 @@ To get wallet balance, run the following code:
 ```typescript
 const balance = await trueWallet.getBalance();
 ```
+
+For more information please visit <a href="https://docs.true-wallet.io/" target="_blank">docs</a>.
