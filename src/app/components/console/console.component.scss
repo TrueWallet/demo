@@ -5,6 +5,14 @@
   border-radius: 8px;
   color: var(--text-color-secondary);
   line-height: 1.8;
+
+  @media screen and (max-width: 1140px) {
+    width: 500px;
+  }
+
+  @media screen and (max-width: 993px) {
+    display: none;
+  }
 }
 
 h1 {

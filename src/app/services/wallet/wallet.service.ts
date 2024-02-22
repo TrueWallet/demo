@@ -25,11 +25,13 @@ export class WalletService {
   constructor(private notifications: NotificationsService) {}
 
   async init(): Promise<void>{
+    const salt = this.getSalt();
+
     try {
       this.wallet = await initTrueWallet({
         signer: {
           type: 'salt',
-          data: ['demo-salt'],
+          data: [salt],
         },
         // FIXME: env:
         bundlerUrl: 'https://mumbai.true-wallet.io/v1/rpc/d5d1855a-d570-47f8-a680-4eee2fd0a616'
@@ -127,5 +129,21 @@ export class WalletService {
         message: e.message,
       });
     }
+  }
+
+  private getSalt() {
+    /**
+     * This is only for demonstration purposes.
+     * DO NOT use this generation method in your production.
+     * */
+    let salt = localStorage.getItem('salt');
+
+    if (salt) {
+      return salt;
+    }
+
+    salt = crypto.randomUUID();
+    localStorage.setItem('salt', salt);
+    return salt;
   }
 }

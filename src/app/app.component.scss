@@ -7,6 +7,11 @@ main {
   padding: 1rem;
   box-sizing: inherit;
   position: relative;
+
+  @media screen and (max-width: 500px) {
+    padding: 0;
+    display: block;
+  }
 }
 
 .content {
@@ -14,6 +19,22 @@ main {
   justify-content: center;
   gap: 48px;
   width: 100%;
+
+  @media screen and (max-width: 1140px) {
+    gap: 24px;
+  }
+
+  @media screen and (max-width: 993px) {
+    .divider {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+  }
 }
 
 .divider {
@@ -26,11 +47,23 @@ main {
   border-radius: 32px;
   background-color: black;
 
+  @media screen and (max-width: 500px) {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
   .container {
     width: 375px;
     height: 667px;
     background-color: #181A20;
     overflow: hidden;
     color: #ffffff;
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+    }
   }
 }
