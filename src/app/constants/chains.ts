@@ -1,8 +1,8 @@
 import { Chain } from "../interfaces/chain";
 
 export const chains: Chain[] = [{
-  id: 80001,
-  name: 'Polygon Mumbai',
+  id: 80002,
+  name: 'Polygon Amoy',
   symbol: 'MATIC',
   enabled: true,
 }];
