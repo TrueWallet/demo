@@ -1,6 +1,6 @@
 ## Overview
 
-This is the demo project of TrueWallet Smart Account. The same integration could be implemented in any mobile or web app for your customers.
+This is the demo project of the TrueWallet Smart Account in the Amoy network. The same integration could be implemented in any mobile or web app for your customers.
 
 ## Wallet Initialization
 

@@ -65,7 +65,7 @@ export class AssetOperationsComponent {
       case AssetOperation.receive:
         return `/${operation.toLowerCase()}${this.token ? `/${this.token.symbol}` : ''}`;
       case AssetOperation.deposit:
-        return this.token ? null : `https://faucet.polygon.technology/`;
+        return this.token ? null : `https://faucet.true-wallet.io/`;
       default:
         return null;
     }

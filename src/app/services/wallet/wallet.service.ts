@@ -34,7 +34,7 @@ export class WalletService {
           data: [salt],
         },
         // FIXME: env:
-        bundlerUrl: 'https://mumbai.true-wallet.io/v1/rpc/d5d1855a-d570-47f8-a680-4eee2fd0a616'
+        bundlerUrl: 'https://amoy.true-wallet.io/v1/rpc/d5d1855a-d570-47f8-a680-4eee2fd0a616'
       });
     } catch (e: any) {
       this.notifications.warning({
